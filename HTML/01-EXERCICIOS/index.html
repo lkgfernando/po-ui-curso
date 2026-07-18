@@ -11,12 +11,12 @@
     <header>
         <nav>
             <ul>
-                <li><a onclick="showContent('home')" href="">Home</a></li>
-                <li><a onclick="showContent('clientes')" href="#clientes">Clientes</a></li>
-                <li><a onclick="showContent('orcamentos')" href="#orcamentos">Orçamentos</a></li>
+                <li id="lihome"><a onclick="showContent('home')" href="">Home</a></li>
+                <li id="liclientes" class="hidden-mob"><a onclick="showContent('clientes')" href="#clientes">Clientes</a></li>
+                <li id="liorcamentos" class="hidden-mob"><a onclick="showContent('orcamentos')" href="#orcamentos">Orçamentos</a></li>
             </ul>
+            <div onclick="showMenu()" class="icon"><i class="fa fa-bars"></i></div>
         </nav>
-        <div class="icon"><i class="fa fa-bars"></i></div>
     </header>
     <main>
         <div id="home">
@@ -29,21 +29,21 @@
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
-                        <th>Email</th>
+                        <th name="email">Email</th>
                     </tr>
                     <tbody>
                         <tr>
                             <td>1</td>
                             <td>Livia Maria Sabaini Rodrigues</td>
-                            <td>livia@gmail.com</td>
+                            <td name="email">livia@gmail.com</td>
                         </tr>                        <tr>
                             <td>2</td>
                             <td>Fernando José Rodrigues</td>
-                            <td>fernando@gmail.com</td>
+                            <td name="email">fernando@gmail.com</td>
                         </tr>                        <tr>
                             <td>3</td>
                             <td>Kauan Sabaini Rodrigues</td>
-                            <td>kauan@gmail.com</td>
+                            <td name="email">kauan@gmail.com</td>
                         </tr>
                     </tbody>
                 </thead>
