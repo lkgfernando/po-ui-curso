@@ -130,6 +130,29 @@ main h1 {
     font-size: 22px;
 }
 
+/* Estilo para ocultar as divs clientes e orçamentos */
+
+.hidden {
+    display: none;
+}
+
+/* Estilização do menu haburguer */
+
+.icon {
+    font-size: 25pt;
+    border: solid 1px white;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 0 5px;
+    background-color: rgb(84, 28, 135);
+    color: white;
+    border-radius: 4px;
+
+}
+
+
 @media screen and (max-width: 1200px){
     .orcamentos{
         grid-template-columns: 33% 33% 33%;
@@ -145,5 +168,9 @@ main h1 {
 @media screen and (max-width: 500px){
     .orcamentos{
         grid-template-columns: 100%;
+    }
+
+    .icon {
+        display: inline;
     }
 }

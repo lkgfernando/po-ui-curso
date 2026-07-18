@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes/Orçamentos</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="#clientes">Clientes</a></li>
-                <li><a href="#orcamentos">Orçamentos</a></li>
+                <li><a onclick="showContent('home')" href="">Home</a></li>
+                <li><a onclick="showContent('clientes')" href="#clientes">Clientes</a></li>
+                <li><a onclick="showContent('orcamentos')" href="#orcamentos">Orçamentos</a></li>
             </ul>
         </nav>
+        <div class="icon"><i class="fa fa-bars"></i></div>
     </header>
     <main>
         <div id="home">
             <h1>Home</h1>
         </div>
-        <div id="clientes">
+        <div id="clientes" class="hidden">
             <h1>Clientes</h1>
             <table >
                 <thead>
@@ -48,7 +49,7 @@
                 </thead>
             </table>
         </div>
-        <div id="orcamentos">
+        <div id="orcamentos" class="hidden">
             <h1>Orçamentos</h1>
             <div class="orcamentos">
                 <div class="card-orcamento">
@@ -95,5 +96,6 @@
             </div>
         </div>
     </main>
+    <script src="../js/script.js"></script>
 </body>
 </html>
