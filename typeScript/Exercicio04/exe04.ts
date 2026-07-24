@@ -21,7 +21,7 @@ export class pessoa implements IPessoa {
   }
 
   public getNome(): string {
-    return "";
+    return "fernanod";
   }
 
   public getIdade(): number {
