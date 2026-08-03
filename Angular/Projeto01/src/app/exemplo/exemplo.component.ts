@@ -4,17 +4,13 @@ import { Component } from '@angular/core';
   selector: 'app-exemplo',
   standalone: true,
   imports: [],
-  template: `
-    <h2>Templete inline</h2>
-  `,
-  styles:`
-    h2{
-      color: blueviolet;
-    }
-  `,
-  // templateUrl: './exemplo.component.html',
-  // styleUrl: './exemplo.component.css'
+  templateUrl: './exemplo.component.html',
+  styleUrl: './exemplo.component.css',
 })
 export class ExemploComponent {
+  private titulo: string = 'Titulo do componente Exemplo';
 
+  public getTitulo(): string {
+    return this.titulo;
+  }
 }
