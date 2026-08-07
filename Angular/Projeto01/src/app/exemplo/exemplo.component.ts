@@ -13,4 +13,11 @@ export class ExemploComponent {
   constructor(){
 
   }
+
+  updateTitulo(){
+    this.titulo.update((value) => {
+      return `${value} OK`
+    })
+
+  }
 }
