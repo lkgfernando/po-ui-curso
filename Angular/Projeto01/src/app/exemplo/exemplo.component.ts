@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, effect } from '@angular/core';
 
 @Component({
   selector: 'app-exemplo',
@@ -8,16 +8,17 @@ import { Component, signal } from '@angular/core';
   styleUrl: './exemplo.component.css',
 })
 export class ExemploComponent {
-  public titulo = signal<string|number>("OK")
+  public titulo = signal<string | number>('OK');
 
-  constructor(){
-
+  constructor() {
+    effect(() => {
+      console.log(`Alteração do titulo: ${this.titulo()}`);
+    });
   }
 
-  updateTitulo(){
+  updateTitulo() {
     this.titulo.update((value) => {
-      return `${value} OK`
-    })
-
+      return `${value} OK`;
+    });
   }
 }
