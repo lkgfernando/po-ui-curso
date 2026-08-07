@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-exemplo',
@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './exemplo.component.css',
 })
 export class ExemploComponent {
-  private titulo: string = 'Titulo do componente Exemplo';
+  public titulo = signal<string|number>("OK")
 
-  public getTitulo(): string {
-    return this.titulo;
+  constructor(){
+
   }
 }
