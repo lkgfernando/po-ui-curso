@@ -7,8 +7,9 @@ import { ExemploComponent } from './exemplo/exemplo.component';
   standalone: true,
   imports: [ExemploComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Projeto01';
+  public paragrafo =
+    'Paragrafo de exemplo para teste do input obrigatório do componente ExemploComponent';
 }

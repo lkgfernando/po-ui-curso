@@ -1,4 +1,4 @@
-import { Component, signal, effect } from '@angular/core';
+import { Component, signal, effect, Input } from '@angular/core';
 
 @Component({
   selector: 'app-exemplo',
@@ -9,6 +9,14 @@ import { Component, signal, effect } from '@angular/core';
 })
 export class ExemploComponent {
   public titulo = signal<string | number>('OK');
+
+  @Input() txtTitulo: string = '';
+  @Input('sub') subtitulo: string = '';
+  @Input({
+    alias: 'texto',
+    required: true,
+  })
+  texto: string = '';
 
   constructor() {
     effect(() => {
