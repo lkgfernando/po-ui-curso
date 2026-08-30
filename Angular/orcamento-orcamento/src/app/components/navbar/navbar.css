@@ -1,0 +1,67 @@
+header {
+  background-color: #8a2ce2;
+  margin: 10px;
+  border-radius: 10px;
+  display: block;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  padding: 10px;
+}
+
+header ul li {
+  list-style-type: none;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+header ul li:hover {
+  transition: 0.5s;
+}
+
+header ul li a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+header ul li a:hover {
+  color: blueviolet;
+  transition: 0.5s;
+  background-color: #9fa1ff;
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Estilização do menu haburguer */
+
+.icon {
+  font-size: 25pt;
+  border: solid 1px white;
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 0 5px;
+  background-color: rgb(84, 28, 135);
+  color: white;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 500px) {
+  .icon {
+    display: inline;
+  }
+
+  .hidden-mob {
+    display: none;
+  }
+
+  header ul {
+    flex-direction: column;
+  }
+}
