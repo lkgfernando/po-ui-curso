@@ -1,3 +1,20 @@
 <h1>Hello Word!!!</h1>
 <br>
+<button (click)="showExemplo()">{{txtButton}}</button>
+
+
+@switch (showHideExemplo) {
+@case (true) {
 <app-exemplo txtTitulo="Meu Subtitulo" sub="Sub titulo de exemplo" [texto]="paragrafo"></app-exemplo>
+}
+@case (false) {
+<app-exemplo [texto]="paragrafo"></app-exemplo>
+}
+@default {
+<app-exemplo txtTitulo="Titulo Default" sub="Sub titulo de exemplo defaut" [texto]="paragrafo"></app-exemplo>
+}
+}
+
+<!-- @if (showHideExemplo) {
+<app-exemplo txtTitulo="Meu Subtitulo" sub="Sub titulo de exemplo" [texto]="paragrafo"></app-exemplo>
+} -->

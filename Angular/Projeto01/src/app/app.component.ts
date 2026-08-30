@@ -12,4 +12,9 @@ import { ExemploComponent } from './exemplo/exemplo.component';
 export class AppComponent {
   public paragrafo =
     'Paragrafo de exemplo para teste do input obrigatório do componente ExemploComponent';
+  public showHideExemplo: boolean = true;
+  public txtButton: string = 'Ocultar';
+  public showExemplo(): void {
+    this.showHideExemplo = !this.showHideExemplo;
+  }
 }

@@ -1,4 +1,11 @@
-import { Component, signal, effect, Input } from '@angular/core';
+import {
+  Component,
+  signal,
+  effect,
+  Input,
+  SimpleChange,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-exemplo',
@@ -19,14 +26,27 @@ export class ExemploComponent {
   texto: string = '';
 
   constructor() {
-    effect(() => {
-      console.log(`Alteração do titulo: ${this.titulo()}`);
-    });
+    // effect(() => {
+    //   console.log(`Alteração do titulo: ${this.titulo()}`);
+    // });
+    console.log(`constructor`);
   }
 
-  updateTitulo() {
-    this.titulo.update((value) => {
-      return `${value} OK`;
-    });
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(`Onchanges: `, changes['texto'].currentValue);
   }
+
+  ngOnInit(): void {
+    console.log(`OnInit`);
+  }
+
+  ngOnDestroy(): void {
+    console.log(`OnDestroy`);
+  }
+
+  // updateTitulo() {
+  //   this.titulo.update((value) => {
+  //     return `${value} OK`;
+  //   });
+  // }
 }
