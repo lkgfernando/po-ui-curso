@@ -6,7 +6,7 @@
 
 #clientes table th,
 #clientes table td {
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid rgba(138, 43, 226, 0.5);
   text-align: left;
 }
 

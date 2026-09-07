@@ -1,0 +1,20 @@
+<div class="product-grid">
+    @for(produto of produtos(); track $index){
+    <article class="card">
+        <div class="img-wrapper">
+            <span class="category-badge">{{produto.category}}</span>
+            <img [src]="produto.image" [alt]="produto.title" loading="lazy">
+        </div>
+        <div class="content">
+            <h3 class="title">{{produto.title}}</h3>
+            <p class="description">{{produto.description}}</p>
+            <div class="footer">
+                <span class="price">{{produto.price | currency:'R$ ':'symbol':'1.2-2'}}</span>
+                <div class="contron">
+                    <button type="button" class="btn-buy">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </article>
+    }
+</div>

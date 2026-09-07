@@ -1,0 +1,29 @@
+<div class="form">
+    <form [formGroup]="loginForm" (submit)="submitLogin2()">
+        <h2>Longin no sistema</h2>
+        <label for="login">Login: </label>
+        <input type="text" id="login" name="login" formControlName="login" placeholder="Informe seu login">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" formControlName="pass">
+        <button (click)="confirmLogin()">Enviar</button>
+    </form>
+    <!--     
+    <form>
+        <h2>Longin no sistema</h2>
+        <label for="login">Login: </label>
+        <input type="text" id="login" name="login" [(ngModel)]="login" placeholder="Informe seu login">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="pass">
+        <button (click)="confirmLogin()">Enviar</button>
+    </form> -->
+    <!-- 
+    <form #fl="ngForm" (submit)="submitLogin(fl)">
+        <h2>Longin no sistema</h2>
+        <label for="login">Login: </label>
+        <input type="text" id="login" name="login" [(ngModel)]="login" placeholder="Informe seu login">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="pass">
+        <button (click)="confirmLogin()">Enviar</button>
+    </form>
+    -->
+</div>

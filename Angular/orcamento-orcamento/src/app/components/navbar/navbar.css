@@ -4,6 +4,9 @@ header {
   border-radius: 10px;
   display: block;
   align-items: center;
+  position: sticky;
+  top: 0.01px;
+  z-index: 1000;
 }
 
 header ul {

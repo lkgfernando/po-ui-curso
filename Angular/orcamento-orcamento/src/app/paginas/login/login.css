@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #e7e9ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form {
+  background-color: #fff;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 380px;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form h2 {
+  text-align: center;
+  color: blueviolet;
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+
+.form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+.form label:first-of-type {
+  margin-top: 0;
+}
+
+.form input[type='text'],
+.form input[type='password'] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form input[type='text']:focus,
+.form input[type='password']:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.form button {
+  margin-top: 24px;
+  padding: 12px;
+  background-color: blueviolet;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+.form button:hover {
+  background-color: rgb(197, 158, 233);
+  color: blueviolet;
+}
+
+.form button:active {
+  transform: scale(0.98);
+}
