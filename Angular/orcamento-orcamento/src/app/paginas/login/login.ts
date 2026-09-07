@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -8,6 +8,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   imports: [FormsModule, ReactiveFormsModule],
@@ -16,6 +17,7 @@ import {
   templateUrl: './login.html',
 })
 export class Login {
+  #router = inject(Router);
   public login: string = '';
   public pass: string = '';
   public loginForm = new FormGroup({
@@ -32,6 +34,9 @@ export class Login {
   }
 
   public submitLogin2(): void {
-    console.log('Formulario', this.loginForm.value);
+    if (typeof this.loginForm.value.login === 'string') {
+      window.sessionStorage.setItem('login', this.loginForm.value.login);
+      this.#router.navigate([sessionStorage.getItem('url')]);
+    }
   }
 }
