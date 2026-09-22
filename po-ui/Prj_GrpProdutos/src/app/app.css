@@ -1,0 +1,68 @@
+:host {
+  /* ==========================================================================
+     Customização de Tema PO UI - Paleta Verde Água
+     Documentação: https://po-ui.io/guides/theme-customization
+     Substitui o roxo padrão (#753399) pelos tokens AnimaliaDS / PO UI
+     ========================================================================== */
+
+  /* Tokens da Marca 01 (Brand 01) - Escala de Verde Água */
+  --color-brand-01-lightest: #e0f5f3; /* Fundo suave / selecionado */
+  --color-brand-01-lighter: #b2e5df; /* Hover de fundo / intermediário */
+  --color-brand-01-light: #66c4b8; /* Estado pressionado de fundo */
+  --color-brand-01-base: #008779; /* Verde Água principal (substitui o roxo #753399) */
+  --color-brand-01-dark: #006e62; /* Hover do texto e ações */
+  --color-brand-01-darker: #00544b; /* Estado ativo / pressionado */
+  --color-brand-01-darkest: #003b34; /* Foco e contraste máximo */
+
+  /* Tokens de Ação (Aplica no Menu, Toolbar, Botões, Links, etc.) */
+  --color-action-default: var(--color-brand-01-base);
+  --color-action-hover: var(--color-brand-01-dark);
+  --color-action-pressed: var(--color-brand-01-darker);
+  --color-action-focus: var(--color-brand-01-darkest);
+
+  /* Toolbar */
+  --color-toolbar-color-title: var(--color-action-default);
+
+  /* Page Header / Page Default (Título da Página) */
+  --color-page-header-color-title: var(--color-action-default);
+}
+
+/* Customizações específicas para o Menu e Itens do Menu */
+po-menu {
+  --color: var(--color-action-default);
+}
+
+po-menu-item {
+  --color: var(--color-action-default);
+  --color-hover: var(--color-brand-01-darkest);
+  --background-color-hover: var(--color-brand-01-lighter);
+  --background-color-actived: var(--color-brand-01-lightest);
+  --color-actived: var(--color-action-pressed);
+  --outline-color-focused: var(--color-action-focus);
+}
+
+/* Customizações para o po-page-default e cabeçalho da página */
+po-page-default,
+po-page-header {
+  --color-page-header-color-title: var(--color-action-default);
+}
+
+/* Garante a aplicação da cor verde água no título do po-page-default */
+po-page-default ::ng-deep .po-page-header-title {
+  color: var(--color-action-default) !important;
+}
+
+/* Botões e ações primárias dentro do po-page-default */
+po-page-default ::ng-deep .po-button[p-kind='primary'] {
+  background-color: var(--color-action-default);
+  border-color: var(--color-action-default);
+}
+
+po-page-default ::ng-deep .po-button[p-kind='primary']:hover {
+  background-color: var(--color-action-hover);
+  border-color: var(--color-action-hover);
+}
+
+.po-font-title {
+  color: #008779;
+}

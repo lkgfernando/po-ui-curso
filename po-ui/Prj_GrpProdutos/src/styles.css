@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  /* ==========================================================================
+     Customização Global de Tema PO UI - Paleta Verde Água
+     Documentação: https://po-ui.io/guides/theme-customization
+     ========================================================================== */
+
+  /* Tokens da Marca 01 (Brand 01) - Escala Verde Água */
+  --color-brand-01-lightest: #e0f5f3;
+  --color-brand-01-lighter: #b2e5df;
+  --color-brand-01-light: #66c4b8;
+  --color-brand-01-base: #008779;
+  --color-brand-01-dark: #006e62;
+  --color-brand-01-darker: #00544b;
+  --color-brand-01-darkest: #003b34;
+
+  /* Tokens de Ação */
+  --color-action-default: var(--color-brand-01-base);
+  --color-action-hover: var(--color-brand-01-dark);
+  --color-action-pressed: var(--color-brand-01-darker);
+  --color-action-focus: var(--color-brand-01-darkest);
+
+  /* Toolbar */
+  --color-toolbar-color-title: var(--color-action-default);
+
+  /* Título de Páginas (po-page-default, po-page-header, etc.) */
+  --color-page-header-color-title: var(--color-action-default);
+}

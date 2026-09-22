@@ -10,14 +10,18 @@ import {
 } from '@angular/core';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-import { PoHttpRequestModule } from '@po-ui/ng-components';
+import { PoHttpRequestModule, PoI18nModule } from '@po-ui/ng-components';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    importProvidersFrom([PoHttpRequestModule]),
+    importProvidersFrom([
+      PoHttpRequestModule,
+      PoI18nModule.config({ default: { language: 'pt' }, contexts: {} }),
+    ]),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(withInterceptorsFromDi()),
+    { provide: 'Windows', useValue: window },
   ],
 };

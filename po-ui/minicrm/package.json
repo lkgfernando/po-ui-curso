@@ -19,6 +19,7 @@
     "@angular/router": "^21.2.0",
     "@po-ui/ng-components": "^21.30.1",
     "@po-ui/ng-templates": "^21.30.1",
+    "@totvs/po-theme": "^21.31.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

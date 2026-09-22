@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* ==========================================================================
+     Customização Global de Tema PO UI - Paleta Tons Terrosos / Café
+     Cores: #FFDBBB | #CCBEB1 | #997E67 | #664930
+     ========================================================================== */
+
+  /* Tokens da Marca 01 (Brand 01) - Escala Principal */
+  --color-brand-01-lightest: #fff5ec; /* Fundo bem suave */
+  --color-brand-01-lighter: #ffdbbb; /* Cor 1: Pêssego/Amêndoa Claro */
+  --color-brand-01-light: #ccbeb1; /* Cor 2: Bege/Taupe Médio */
+  --color-brand-01-base: #664930; /* Cor 4: Marrom Café Principal */
+  --color-brand-01-dark: #523a26; /* Hover escuro */
+  --color-brand-01-darker: #3d2b1c; /* Estado ativo / pressionado */
+  --color-brand-01-darkest: #291d13; /* Foco e contraste máximo */
+
+  /* Tokens da Marca 02 e 03 */
+  --color-brand-02-base: #997e67; /* Cor 3: Caramelo Mocha */
+  --color-brand-03-base: #ffdbbb; /* Cor 1: Destaque suave */
+
+  /* Tokens de Ação (botões, links, seleções) */
+  --color-action-default: var(--color-brand-01-base);
+  --color-action-hover: var(--color-brand-01-dark);
+  --color-action-pressed: var(--color-brand-01-darker);
+  --color-action-focus: var(--color-brand-01-darkest);
+
+  /* Toolbar */
+  --color-toolbar-color-title: var(--color-action-default);
+
+  /* Título de Páginas (po-page-default, po-page-header) */
+  --color-page-header-color-title: var(--color-action-default);
+
+  /* Menu Panel (po-menu-panel) */
+  --color-menu-panel-background-color-menu: #fdfcfa;
+  --color-menu-panel-border-top-logo: #ccbeb1;
+  --color-menu-panel-color-menu-item-text: #997e67;
+  --color-menu-panel-background-color-item-hover: rgba(255, 219, 187, 0.45);
+  --color-menu-panel-background-color-item-selected: #ffdbbb;
+  --color-menu-panel-color-menu-item-selected: #664930;
+}
+
+/* Remove a linha azul de link (sublinhado) abaixo dos ícones do menu lateral */
+po-menu-panel a,
+.po-menu-panel a,
+.po-menu-panel-item {
+  text-decoration: none !important;
+}

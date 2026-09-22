@@ -5,7 +5,10 @@ export class Customers {
   email: string;
   telefone: string;
   endereco: string;
-  status: string;
+  saldoTitulos: string;
+  municipio: string;
+  estado: string;
+  ultimaCompra: string;
 
   constructor() {
     this.codigo = '';
@@ -14,6 +17,9 @@ export class Customers {
     this.email = '';
     this.telefone = '';
     this.endereco = '';
-    this.status = '';
+    this.saldoTitulos = '';
+    this.municipio = '';
+    this.estado = '';
+    this.ultimaCompra = '';
   }
 }

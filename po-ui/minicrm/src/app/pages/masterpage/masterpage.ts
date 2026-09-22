@@ -18,30 +18,32 @@ export class Masterpage {
       icon: 'an-fill an-house-line',
     },
     {
-      label: 'Customers',
+      label: 'Clientes',
       link: 'customers',
       action: this.clickItemMenu.bind(this),
       icon: 'an an-user',
     },
     {
-      label: 'Products',
+      label: 'Produtos',
       link: 'catalog',
       action: this.clickItemMenu.bind(this),
       icon: 'an an-grid-four',
     },
     {
-      label: 'Budgets',
+      label: 'Orçamentos',
       link: 'budgets',
       action: this.clickItemMenu.bind(this),
       icon: 'an an-shopping-cart',
     },
     {
-      label: 'Exit',
+      label: 'Sair',
       link: 'logoff',
       action: this.clickItemMenu.bind(this),
       icon: 'an an-door',
     },
   ];
 
-  clickItemMenu(menu: PoMenuPanelItem): void {}
+  clickItemMenu(menu: PoMenuPanelItem): void {
+    this.title = menu.label;
+  }
 }

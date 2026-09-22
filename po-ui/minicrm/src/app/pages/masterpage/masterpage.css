@@ -1,0 +1,21 @@
+/* Garante a aplicação da cor do tema no título do po-page-default */
+po-page-default ::ng-deep .po-page-header-title {
+  color: var(--color-action-default) !important;
+}
+
+/* Botões primários */
+po-page-default ::ng-deep .po-button[p-kind='primary'] {
+  background-color: var(--color-action-default);
+  border-color: var(--color-action-default);
+}
+
+po-page-default ::ng-deep .po-button[p-kind='primary']:hover {
+  background-color: var(--color-action-hover);
+  border-color: var(--color-action-hover);
+}
+
+/* Remove a linha azul de sublinhado abaixo dos ícones do menu lateral */
+po-menu-panel ::ng-deep a,
+po-menu-panel ::ng-deep .po-menu-panel-item {
+  text-decoration: none !important;
+}

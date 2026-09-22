@@ -1,1 +1,19 @@
-<p>customerpage works!</p>
+<po-page-list p-title="Lista de Clientes">
+    <po-list-view [p-items]="custormerList" p-property-title="nome">
+        <ng-template p-list-view-content-template let-customer>
+            <div class="po-row">
+                <po-info class="po-sm-10 po-md-2 po-lg-2 po-xl-2" p-label="Codigo" [p-value]="customer.codigo" />
+                <po-info class="po-sm-10 po-md-2 po-lg-2 po-xl-2" p-label="Loja" [p-value]="customer.codigo" />
+                <po-info class="po-sm-12 po-md-6 po-lg-4 po-xl-2" p-label="Endereço" [p-value]="customer.endereco" />
+                <po-info class="po-sm-8 po-md-2 po-lg-4 po-xl-2" p-label="Email" [p-value]="customer.email" />
+                <po-info class="po-sm-6 po-md-2 po-lg-4 po-xl-2" p-label="Telefone" [p-value]="customer.telefone" />
+                <po-info class="po-sm-6 po-md-2 po-lg-4 po-xl-2" p-label="Cidade" [p-value]="customer.municipio" />
+                <po-info class="po-sm-6 po-md-2 po-lg-4 po-xl-2" p-label="UF" [p-value]="customer.estado" />
+                <po-info class="po-sm-6 po-md-2 po-lg-4 po-xl-2" p-label="Sal.Titulos"
+                    [p-value]="customer.saldoTitulos" />
+                <po-info class="po-sm-6 po-md-2 po-lg-4 po-xl-2" p-label="Ultima Compra"
+                    [p-value]="customer.ultimaCompra" />
+            </div>
+        </ng-template>
+    </po-list-view>
+</po-page-list>
