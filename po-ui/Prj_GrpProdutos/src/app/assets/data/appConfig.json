@@ -2,5 +2,5 @@
   "name": "Prj_GrupoDeProdutos",
   "version": "1.0.0",
   "productLine": "Protheus",
-  "api_base_url": "https://orcl:2200/rest"
+  "api_baseUrl": "https://orcl:2200/rest"
 }

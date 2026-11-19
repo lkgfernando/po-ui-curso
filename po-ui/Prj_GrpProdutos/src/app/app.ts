@@ -24,12 +24,12 @@ export class App {
     private proAppConfigService: ProAppConfigService,
     private router: Router,
   ) {
-    if (this.proAppConfigService.insideProtheus()) {
-      this.proAppConfigService.loadAppConfig();
+    if (!this.proAppConfigService.insideProtheus()) {
+      // this.proAppConfigService.loadAppConfig();
       sessionStorage.setItem('insideProtheus', '0');
       sessionStorage.setItem(
         'ERPTOKEN',
-        '{"access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InBKd3RQdWJsaWNLZXlGb3IyNTYifQ.eyJpc3MiOiJUT1RWUy1BRFZQTC1GV0pXVCIsInN1YiI6IkFkbWluaXN0cmFkb3IiLCJpYXQiOjE3OTIxOTkxMTMsInVzZXJpZCI6IjAwMDAwMCIsImV4cCI6MTc5MjIwMjcxMywiZW52SWQiOiJwcm90aGV1cyJ9.EMaxScr_SD7IklrZteFtcno1QToc1Agk5Tgfe1PL_QJDSZlMFz8cGqz848_cebNkH6E2suRJsyQpzt0u4fgnBg0_DDiFtxZv1LreCuMiUnyE65jqM0YWeySub-g_OgELI1Nb_kltQ65SQAePaXey6VlyruBQJvlNNk3jhfhrRwp0xnTQUJ4ztuDRqiH-5KNezVgTUyv5DYFMUSw_buinxkYXkLXNXTwHMQv6leCLjYx6zC0p7jzN3LkUWsiXsxOFEv7uFS7yKnXAZ4ek6xG9k2xyyai6Kwi9DMjzsa5KeSDln4g22NZ8iEbecmiLuffSh60Nx3AiJKMiwgyX28_wqw", "refresh_token": "JJqkEBwQuE7kHTqrodqbBfla.OJmVUTAtxArJej2qtfr0TsZzk-10lCSVqcieiEuJEXNGQeaLNbLeFij5KpA9MWhGlw12b2mWS9LxcWAidcuo_uoCX-keOmIJehfGBSm1Bs_y6ypALIW3eKlJM_bR0eBhee2_0jAMrUv2QiQckbZIovfGkpbDiKSu4LWfzutMbnLCmgmyUu7Y0JbWbeI3sk8OTUWNijqLXcWWCMUVp7B2N9g8.f2f2EIZOnxTypG9JgtrTWizxmFK4Hk832D-cxBmOaBk6jwRvEiFhJt81Xz9QIDx5HWzc10gazPetfKzFtNCXP-wBi56f2B0z5oqzcTubX2R4ZbdHrbcfip8_wve0YCScE2m0X-xTxWx5EfaR_3_a0X3ReLOyi0GHAhbcEovbb0jZdg6Zjsd9Ovge3oR8fbaj6GGY0Fu5aNLSVZ2nsCGrkvNJ4CZpbmN4bj529dUYI5uBl6S92gIpakbgJpC4xdzSyY-UVRwBMaKM59uqIY6T0z85H6mRfpduBoZc5zExEzQy469oIxIgL1tDUe29ow4wvlG6ry8sAhDA_5-mUKivpw", "scope": "default", "token_type": "Bearer", "expires_in": 3600, "hasMFA": false }',
+        '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InBKd3RQdWJsaWNLZXlGb3IyNTYifQ.eyJpc3MiOiJUT1RWUy1BRFZQTC1GV0pXVCIsInN1YiI6IkFkbWluaXN0cmFkb3IiLCJpYXQiOjE3OTQ4NzM2MDIsInVzZXJpZCI6IjAwMDAwMCIsImV4cCI6MTc5NDg3NzIwMiwiZW52SWQiOiJwcm90aGV1cyJ9.URFxgW34Pmza61y37ihfLdh6Llu_R8ob1segoTi2tqwVG-lhuojaGk9QZ9vkLGp0D7r2k7qfJvJae6sDQ7H9KwErA6PmPWpHaZSeqMVOk6CNCDelrHvcqiPt5NdEdm5bnjptQ6nh0Jwi91sCc2j0MI3WC8qFMLQPRFXipdnTud1PC8hjCCeLMZtt9mX5ssMu0ghDS_-IXlmwmAAwLixDhc2a6zXVNI97GyCMHQr5FJ4Oz5-e-Ez80bSeetnoyvOsMXD3Gl_CxOTDP9e45mqjNPxpT02MRm2RlOnasMcLCA64VZ1fBrySbguso_30WE4TSavXVWKaTng7e0kPxJEb7Q","refresh_token":"JJqkEB8-mkjnDS6kocqbBfla.OJmVUTAtxArJej2qtfr0TsZzk-10lCSVqcieiEuJEXNGQeaLNb3eFij5KpA9MWhK1Q1ma2mWddLxcWAidcuo_uoCX-YeOmIJehfGBTmtTM_i7ypAEoW3eKlJM_bR0eBhee2_0jAMrUv2QiQckbZIovfGkpbDiKSu4LWfzutMbnLCmgmyUu7Y0JbWbeI3sk8OTUWNijqLXcWWCMUVp7B2N9g8.SYXDf6YW-tp8tYzXxjTv6StbTsLmI8IYdVSY3OxCO-jPs3xnDzhcOJsWdp-23-ycEEC_AS8u01_TQwFqHRzBN6j8HFMu7BOVnhEvL0TOsYfhrziymwVIEZTlmzQ10-M2cZFK4kOByWVk6o2--w57JmyN92bCmxiBMYdVKJ9NW8qcwxb_YnSl1opOg92hZPIZ1vEfGOm9HcBrMb5v4Sddx7atMRJdJ2PxCVkq61Dz-Szqu7GNFuEesHabCF05zK8d8E8WPaXbVKH0IobdkcjugmWyg5qt5QSLq632PzlnPh8k6uEspq-rl_kNXQt9i3X9o-cyhz8E-M98lvSXTAeUig","scope":"default","token_type":"Bearer","expires_in":3600,"hasMFA":false,"api_base_url":"https://orcl:2200/rest","url":"https://orcl:2200/rest"}',
       );
     } else {
       sessionStorage.setItem('insideProtheus', '1');
