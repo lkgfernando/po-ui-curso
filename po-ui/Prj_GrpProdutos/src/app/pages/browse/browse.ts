@@ -9,17 +9,34 @@ import {
   PoSearchModule,
   PoTableColumn,
   PoTagType,
+  PoTableAction,
+  PoButtonGroupModule,
+  PoButtonGroupItem,
 } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-browse',
-  imports: [PoComponentsModule, PoInfoModule, PoTableModule, PoSearchModule],
+  imports: [PoComponentsModule, PoInfoModule, PoTableModule, PoSearchModule, PoButtonGroupModule],
   templateUrl: './browse.html',
   styleUrl: './browse.css',
 })
 export class Browse {
   public columns: Array<PoTableColumn> = [];
   public items: Array<any> = [];
+  public actions: Array<PoTableAction> = [];
+
+  public topButtons: Array<PoButtonGroupItem> = [
+    {
+      label: 'Incluir Registro',
+      icon: 'an an-plus',
+      action: this.incluirRegistro.bind(this),
+    },
+    {
+      label: 'Atualizar Registro',
+      icon: 'an an-arrows-clockwise',
+      action: this.editarRegistro.bind(this),
+    },
+  ];
 
   constructor(private http: HttpClient) {}
 
@@ -93,5 +110,19 @@ export class Browse {
     });
 
     return itemsRequest;
+  }
+
+  // Ações dos botões do topo
+  incluirRegistro() {
+    alert('Incluir Registro');
+  }
+
+  editarRegistro() {
+    this.items = this.getItems();
+    let messageDate = 'Abaixo as informações dos Grupos de Produtos';
+
+    messageDate += '\n\nÚltima atualização: ' + new Date().toLocaleString();
+
+    (document.getElementsByClassName('po-info-value')[0] as HTMLElement).innerHTML = messageDate;
   }
 }
