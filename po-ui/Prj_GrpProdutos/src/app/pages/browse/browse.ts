@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { PoComponentsModule } from '@po-ui/ng-components';
 
+import { RouterModule, Router } from '@angular/router';
+
 import { HttpClient } from '@angular/common/http';
 
 import {
@@ -16,7 +18,14 @@ import {
 
 @Component({
   selector: 'app-browse',
-  imports: [PoComponentsModule, PoInfoModule, PoTableModule, PoSearchModule, PoButtonGroupModule],
+  imports: [
+    PoComponentsModule,
+    PoInfoModule,
+    PoTableModule,
+    PoSearchModule,
+    PoButtonGroupModule,
+    RouterModule,
+  ],
   templateUrl: './browse.html',
   styleUrl: './browse.css',
 })
@@ -29,16 +38,19 @@ export class Browse {
     {
       label: 'Incluir Registro',
       icon: 'an an-plus',
-      action: this.incluirRegistro.bind(this),
+      action: this.newButton.bind(this),
     },
     {
       label: 'Atualizar Registro',
       icon: 'an an-arrows-clockwise',
-      action: this.editarRegistro.bind(this),
+      action: this.refreshButton.bind(this),
     },
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     //   const erpToken = sessionStorage.getItem('ERPTOKEN');
@@ -55,6 +67,11 @@ export class Browse {
 
     this.columns = this.getColumns();
     this.items = this.getItems();
+    this.actions = this.getActions();
+
+    //criar na session o código do grupo e a operação
+    sessionStorage.setItem('grupoID', '');
+    sessionStorage.setItem('operation', '');
   }
 
   getColumns(): Array<PoTableColumn> {
@@ -112,12 +129,59 @@ export class Browse {
     return itemsRequest;
   }
 
-  // Ações dos botões do topo
-  incluirRegistro() {
-    alert('Incluir Registro');
+  getActions(): Array<PoTableAction> {
+    return [
+      { label: 'Visualizar', action: this.viewButton.bind(this), icon: 'an-fill an-eye' },
+      { label: 'Alterar', action: this.editButton.bind(this), icon: 'an-fill an-edit' },
+      {
+        label: 'Excluir',
+        action: this.deleteButton.bind(this),
+        icon: 'an-fill an-trash',
+        type: 'danger',
+      },
+    ];
   }
 
-  editarRegistro() {
+  // Ações dos botões do topo
+  newButton() {
+    console.log('Ação do botão de inclusão de registro');
+
+    sessionStorage.setItem('grupoID', '');
+    sessionStorage.setItem('operation', '3');
+    this.router.navigate(['/', 'manipulate']);
+  }
+
+  viewButton(objectParam: any) {
+    let grupoID = objectParam.grupo;
+
+    console.log('Ação do botão de visualização da linha: ' + JSON.stringify(objectParam));
+
+    sessionStorage.setItem('grupoID', grupoID);
+    sessionStorage.setItem('operation', '2');
+    this.router.navigate(['/', 'manipulate']);
+  }
+
+  editButton(objectParam: any) {
+    let grupoID = objectParam.grupo;
+
+    console.log('Ação do botão de edição da linha: ' + JSON.stringify(objectParam));
+
+    sessionStorage.setItem('grupoID', grupoID);
+    sessionStorage.setItem('operation', '4');
+    this.router.navigate(['/', 'manipulate']);
+  }
+
+  deleteButton(objectParam: any) {
+    let grupoID = objectParam.grupo;
+
+    console.log('Ação do botão de exclusão da linha: ' + JSON.stringify(objectParam));
+
+    sessionStorage.setItem('grupoID', grupoID);
+    sessionStorage.setItem('operation', '5');
+    this.router.navigate(['/', 'manipulate']);
+  }
+
+  refreshButton() {
     this.items = this.getItems();
     let messageDate = 'Abaixo as informações dos Grupos de Produtos';
 
